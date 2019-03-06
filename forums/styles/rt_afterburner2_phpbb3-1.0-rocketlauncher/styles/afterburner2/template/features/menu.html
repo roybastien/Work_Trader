@@ -1,0 +1,43 @@
+<div class="gf-menu-device-container"></div>
+<!-- IF S_ALLOW_JMENU --> <!-- IF S_USER_LOGGED_IN -->
+{T_JOOMLA_MENU_REG} <!-- ELSE --> {T_JOOMLA_MENU} <!-- ENDIF --> <!-- ELSE -->
+<ul class="gf-menu rt-desktop-menu l1  ">
+	<!-- IF AFTERBURNER2_ADDITIONAL_LINKS_POSITION eq 'before' -->
+	<!-- INCLUDE features/mainmenu.html -->	
+	<!-- ENDIF -->
+	<li class="item1 <!-- IF U_INDEX_STYLE -->active<!-- ENDIF --> last" <!-- IF U_INDEX_STYLE -->id="current"<!-- ENDIF -->>
+		<a class="item" href="{U_INDEX}" accesskey="h">
+			<span class="menu-text">{L_INDEX}</span>
+		</a>
+	</li>
+	<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+	<li class="item2 <!-- IF U_PROFILE_STYLE -->active<!-- ENDIF --> last" <!-- IF U_PROFILE_STYLE -->id="current"<!-- ENDIF  -->>
+		<a class="item" href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u">
+			<span class="menu-text">{L_PROFILE}</span>
+		</a>
+	</li>
+	<!-- ENDIF -->
+	<li class="item3 <!-- IF U_FAQ_STYLE -->active<!-- ENDIF --> last" <!-- IF U_FAQ_STYLE -->id="current"<!-- ENDIF -->>
+		<a class="item" href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">
+			<span class="menu-text">{L_FAQ}</span>
+		</a>
+	</li>
+	<!-- IF not S_IS_BOT -->
+	<!-- IF not S_USER_LOGGED_IN -->
+	<li class="item4 <!-- IF U_REGISTER_STYLE -->active<!-- ENDIF --> last" <!-- IF U_REGISTER_STYLE -->id="current"<!-- ENDIF -->>
+		<a class="item" href="{U_REGISTER}">
+			<span class="menu-text">{L_REGISTER}</span>
+		</a>
+	</li>
+	<!-- ENDIF -->
+	<!-- ENDIF -->
+	<li class="item5 <!-- IF U_LOGIN_LOGOUT_STYLE -->active<!-- ENDIF --> rt-dropdown-login last" <!-- IF U_LOGIN_LOGOUT_STYLE -->id="current"<!-- ENDIF -->>
+		<a class="item" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l">
+			<span class="menu-text">{L_LOGIN_LOGOUT}</span>
+		</a>
+	</li>
+	<!-- IF AFTERBURNER2_ADDITIONAL_LINKS_POSITION eq 'after' -->
+	<!-- INCLUDE features/mainmenu.html -->	
+	<!-- ENDIF -->
+</ul>
+							<!-- ENDIF -->

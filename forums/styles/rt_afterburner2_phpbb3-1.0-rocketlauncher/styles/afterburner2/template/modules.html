@@ -1,0 +1,114 @@
+<!-- IF SCRIPT_NAME eq 'viewtopic' -->
+<!-- IF S_DISPLAY_ONLINE_LIST -->
+<div class="rt-grid-12 rt-alpha">
+		<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+			<div class="module-surround">
+				<div class="module-title">
+					<h2 class="title">
+						<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+						<!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF -->
+					</h2>
+				</div>
+				<div class="module-content">{LOGGED_IN_USER_LIST}
+				</div>
+			</div>
+		</div>
+</div>
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- IF SCRIPT_NAME eq 'viewforum' -->
+<div class="rt-grid-<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->4<!-- ELSE -->6<!-- ENDIF --> rt-alpha">
+		<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+			<div class="module-surround">
+				<div class="module-title">	
+					<h2 class="title">
+						<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+						<!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF -->
+					</h2>
+				</div>
+				<div class="module-content">{LOGGED_IN_USER_LIST}
+				</div>
+			</div>
+		</div>
+</div>
+<!-- ELSE -->
+<!-- IF S_DISPLAY_ONLINE_LIST -->
+<div class="rt-grid-<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->4<!-- ELSE -->6<!-- ENDIF --> rt-alpha">
+		<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+			<div class="module-surround">
+				<div class="module-title">
+					<!-- IF U_VIEWONLINE -->
+					<h2 class="title">
+						<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+						<a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a>
+					</h2>
+					<!-- ELSE -->
+					<h2 class="title">{L_WHO_IS_ONLINE}</h2>
+					<!-- ENDIF -->
+				</div>
+				<div class="module-content">{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />
+					{RECORD_USERS}<br />
+					<br />
+					{LOGGED_IN_USER_LIST} <!-- IF LEGEND --><br />
+					<em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF -->
+				</div>
+			</div>	
+		</div>
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+<div class="rt-grid-4">
+		<div class="rt-block {AFTERBURNER2_BIRTHDAY_LIST_STYLE}">
+			<div class="module-surround">
+				<div class="module-title ">
+					<h2 class="title">
+						<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_BIRTHDAY_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+						{L_BIRTHDAYS}
+					</h2>
+				</div>
+				<div class="module-content"><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF -->
+				</div>
+		</div>
+</div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF SCRIPT_NAME eq 'viewforum' -->
+<!-- IF S_DISPLAY_POST_INFO -->
+<div class="rt-grid-<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->4<!-- ELSE -->6<!-- ENDIF -->">
+		<div class="rt-block {AFTERBURNER2_FORUM_PERMISSIONS_STYLE}">	
+			<div class="module-surround">
+				<div class="module-title">
+					<h2 class="title">
+						<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_FORUM_PERMISSIONS_STYLE']). '"></span>';<!-- ENDPHP -->
+						{L_FORUM_PERMISSIONS}
+					</h2>
+				</div>
+				<div class="module-content"><!-- BEGIN rules -->{rules.RULE}<br />
+					<!-- END rules -->
+				</div>
+			</div>
+		</div>
+</div>
+<!-- ENDIF -->
+<!-- ELSE -->
+<!-- IF NEWEST_USER -->
+<div class="rt-grid-<!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->4<!-- ELSE -->6<!-- ENDIF -->">
+		<div class="rt-block {AFTERBURNER2_STATISTICS_STYLE}">
+			<div class="module-surround">
+				<div class="module-title">
+					<h2 class="title">
+						<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_STATISTICS_STYLE']). '"></span>';<!-- ENDPHP -->
+						{L_STATISTICS}
+					</h2>
+				</div>
+				<div class="module-content">{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} &bull; {NEWEST_USER}
+				</div>
+			</div>
+		</div>
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- ENDIF -->

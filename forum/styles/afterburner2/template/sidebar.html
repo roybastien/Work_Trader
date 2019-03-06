@@ -1,0 +1,245 @@
+<!-- IF AFTERBURNER2_MENUPOSITION eq 'right' or AFTERBURNER2_MENUPOSITION eq 'left' -->
+<div class="rt-grid-3<!-- IF AFTERBURNER2_MENUPOSITION == left --> rt-pull-9 rt-alpha rt-omega<!-- ENDIF --> <!-- IF AFTERBURNER2_MENUPOSITION eq 'right' or AFTERBURNER2_MENUPOSITION eq 'left' --> sidebar-<!-- IF AFTERBURNER2_MENUPOSITION eq 'right' -->right<!-- ELSE -->left<!-- ENDIF --><!-- ENDIF --> rt-omega" >
+<div id="rt-sidebar-a">
+<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+<!-- IF AFTERBURNER2_SEARCH_POSITION eq 'sidebar' -->
+	<div class="rt-block {AFTERBURNER2_SEARCH_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+	                	<h2 class="title">
+	                		<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_SEARCH_STYLE']). '"></span>';<!-- ENDPHP -->
+	                		{L_SEARCH}
+	                	</h2>
+					</div>
+			<div class="module-content">
+
+				<form action="{U_SEARCH}" method="post" id="rokajaxsearch" class="light">
+					<div class="rokajaxsearch">
+						<div class="roksearch-wrapper"><input name="keywords" id="roksearch_search_str" type="text" title="{L_SEARCH_KEYWORDS}" class="inputbox" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->"
+							onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" /></div>
+							<div class="clr"></div>
+						</div>
+						{S_SEARCH_HIDDEN_FIELDS}</form>
+						
+					</div>
+				</div> 
+			</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF SHOW_AFTERBURNER2_COLORSWITCHER -->
+<!-- IF AFTERBURNER2_COLORSWITCHER_POSITION eq 'sidebar' -->
+<div class="rt-block {AFTERBURNER2_COLORSWITCHER_STYLE}">
+	<div class="module-surround">
+		<div class="module-title">
+			<h2 class="title">
+				<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_COLORSWITCHER_STYLE']). '"></span>';<!-- ENDPHP -->
+				Preset Styles
+			</h2>
+		</div>
+		<div class="module-content">
+			<div class="variation_chooser">
+				<span class="rt-desc">Select variation:</span> 
+				<!-- INCLUDE features/colorswitcher.html -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+<!-- IF AFTERBURNER2_FLOATING_MODULE -->
+<!-- IF AFTERBURNER2_MENUPOSITION eq 'right' -->
+<div id="floating-container" class="hidden-phone hidden-tablet"></div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+	<div class="rt-block {AFTERBURNER2_MAIN_MENU_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_MAIN_MENU_STYLE']). '"></span>';<!-- ENDPHP -->
+					Main Menu			
+				</h2>
+			</div>
+			<div class="module-content submenu"><!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
+				<ul class="menu l1">
+					<!-- IF S_DISPLAY_SEARCH -->
+					<li class="parent<!-- IF U_SEARCH_ID eq 'unanswered' -->active<!-- ENDIF -->"><a href="{U_SEARCH_UNANSWERED}"><span class="menuitem">{L_SEARCH_UNANSWERED}</span></a></li>
+					<!-- IF S_USER_LOGGED_IN -->
+					<li class="parent<!-- IF U_SEARCH_ID eq 'newposts' -->active<!-- ENDIF -->"><a href="{U_SEARCH_NEW}"><span class="menuitem">{L_SEARCH_NEW}</span></a></li>
+					<!-- ENDIF -->
+					<li class="parent<!-- IF U_SEARCH_ID eq 'active_topics' -->active<!-- ENDIF -->"><a href="{U_SEARCH_ACTIVE_TOPICS}"><span class="menuitem">{L_SEARCH_ACTIVE_TOPICS}</span></a></li>
+					<!-- ENDIF -->
+					<li class="<!-- IF U_SEARCH_ID eq 'egosearch' -->active<!-- ENDIF -->"><a href="{U_SEARCH_SELF}"><span class="menuitem">{L_SEARCH_SELF}</span></a></li>
+					<li><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}"><span class="menuitem">{L_SEARCH_ADV}</span></a></li>
+					<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
+					<li><a href="{U_MARK_FORUMS}" accesskey="m"><span class="menuitem">{L_MARK_FORUMS_READ}</span></a></li>
+					<!-- ENDIF -->
+				</ul>
+				<!-- ENDIF -->
+				
+			</div>
+		</div> 
+	</div>
+
+<!-- IF SHOW_AFTERBURNER2USER -->
+	<div class="rt-block {AFTERBURNER2_USER_MENU_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_USER_MENU_STYLE']). '"></span>';<!-- ENDPHP -->
+					User Menu
+				</h2>
+			</div>
+			<div class="module-content submenu">
+				<ul class="menu l1">
+					<!-- IF U_MCP -->
+					<li><a href="{U_MCP}"><span class="menuitem">{L_MCP}</span></a></li>
+					<!-- ENDIF -->
+					<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+
+					<li{U_PROFILE_STYLE}><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="u"><span class="menuitem">{L_PROFILE}</span></a></li>
+					<!-- IF S_DISPLAY_PM -->
+					<li{U_PRIVATEMSGS_STYLE}><a href="{U_PRIVATEMSGS}"><span class="menuitem">{PRIVATE_MESSAGE_INFO}</span></a></li>
+					<!-- ENDIF -->
+					<!-- IF U_RESTORE_PERMISSIONS -->
+					<li><a href="{U_RESTORE_PERMISSIONS}"><span class="menuitem">{L_RESTORE_PERMISSIONS}</span></a></li>
+					<!-- ENDIF -->
+
+
+					<!-- ENDIF -->
+					<li{U_FAQ_STYLE}><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><span class="menuitem">{L_FAQ}</span></a></li>
+					<!-- IF not S_IS_BOT -->
+					<!-- IF S_DISPLAY_MEMBERLIST -->
+					<li{U_MEMBERLIST_STYLE}><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><span class="menuitem">{L_MEMBERLIST}</span></a></li>
+					<!-- ENDIF -->
+					<!-- IF not S_USER_LOGGED_IN -->
+					<li{U_REGISTER_STYLE}><a href="{U_REGISTER}"><span class="menuitem">{L_REGISTER}</span></a></li>
+					<!-- ENDIF -->
+					<li{U_LOGIN_LOGOUT_STYLE}><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="l"><span class="menuitem">{L_LOGIN_LOGOUT}</span></a></li>
+					<!-- ENDIF -->
+				</ul>
+				
+			</div>
+		</div> 
+	</div>
+<!-- ENDIF -->
+
+<!-- IF AFTERBURNER2_LOGIN_POSITION eq 'sidebar' -->
+<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
+<div class="rt-block {AFTERBURNER2_LOGIN_STYLE}">
+	<div class="module-surround">
+		<div class="module-title">
+			<h2 class="title">
+				<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_LOGIN_STYLE']). '"></span>';<!-- ENDPHP -->
+				{L_LOGIN}
+				</h2>
+		</div>
+		<div class="module-content">
+			<!-- INCLUDE features/login.html -->
+		</div>
+	</div> 
+</div>
+<!-- ENDIF -->
+<!-- ENDIF -->
+
+
+<!-- IF ENABLE_AFTERBURNER2_SIDE_MODULES --> <!-- IF SCRIPT_NAME eq 'viewtopic' --> <!-- IF S_DISPLAY_ONLINE_LIST -->
+<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+	<div class="module-surround">
+		<div class="module-title">
+			<h2 class="title">
+				<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+				<!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF -->
+			</h2>
+		</div>
+		<div class="module-content">{LOGGED_IN_USER_LIST}
+			
+		</div>
+	</div>
+</div>
+<!-- ENDIF --> <!-- ELSE --> <!-- IF SCRIPT_NAME eq 'viewforum' -->
+	<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+					<!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF -->
+				</h2>
+			</div>
+			<div class="module-content">{LOGGED_IN_USER_LIST}
+				
+			</div>
+		</div>  
+	</div>
+<!-- ELSE --> <!-- IF S_DISPLAY_ONLINE_LIST -->
+	<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+				<!-- IF U_VIEWONLINE -->
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+					<a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a>
+				</h2>
+				<!-- ELSE -->
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_ONLINE_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+					{L_WHO_IS_ONLINE}
+				</h2>
+				<!-- ENDIF -->
+			</div>
+			<div class="module-content">{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />
+				{RECORD_USERS}<br />
+				<br />
+				{LOGGED_IN_USER_LIST} <!-- IF LEGEND --><br />
+				<em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF -->
+				
+			</div>
+		</div> 
+	</div>
+<!-- ENDIF --> <!-- ENDIF --> <!-- IF S_DISPLAY_BIRTHDAY_LIST and BIRTHDAY_LIST -->
+	<div class="rt-block {AFTERBURNER2_BIRTHDAY_LIST_STYLE}">	
+		<div class="module-surround">
+			<div class="module-title">
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_BIRTHDAY_LIST_STYLE']). '"></span>';<!-- ENDPHP -->
+					{L_BIRTHDAYS}
+				</h2>
+			</div>
+			<div class="module-content"><!-- IF BIRTHDAY_LIST -->{L_CONGRATULATIONS}: <strong>{BIRTHDAY_LIST}</strong><!-- ELSE -->{L_NO_BIRTHDAYS}<!-- ENDIF -->
+				
+			</div>
+		</div> 
+	</div>
+<!-- ENDIF --> <!-- IF SCRIPT_NAME eq 'viewforum' --> <!-- IF S_DISPLAY_POST_INFO -->
+	<div class="rt-block {AFTERBURNER2_FORUM_PERMISSIONS_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_FORUM_PERMISSIONS_STYLE']). '"></span>';<!-- ENDPHP -->
+					{L_FORUM_PERMISSIONS}
+				</h2>
+			</div>
+			<div class="module-content"><!-- BEGIN rules -->{rules.RULE}<br />
+				<!-- END rules -->
+				
+			</div>
+		</div>
+	</div>
+<!-- ENDIF --> <!-- ELSE --> <!-- IF NEWEST_USER -->
+	<div class="rt-block {AFTERBURNER2_STATISTICS_STYLE}">
+		<div class="module-surround">
+			<div class="module-title">
+				<h2 class="title">
+					<!-- PHP -->global $template;echo '<span class="title-icon ' .getIconClass($template->_rootref['AFTERBURNER2_STATISTICS_STYLE']). '"></span>';<!-- ENDPHP -->
+					{L_STATISTICS}
+				</h2>
+			</div>
+			<div class="module-content">{TOTAL_POSTS} &bull; {TOTAL_TOPICS} &bull; {TOTAL_USERS} &bull; {NEWEST_USER}
+				
+			</div>
+		</div>
+	</div>
+							<!-- ENDIF --> <!-- ENDIF --> <!-- ENDIF --> <!-- ENDIF -->
+
+						</div>
+				</div>
+<!-- ENDIF -->

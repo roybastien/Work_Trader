@@ -1,0 +1,146 @@
+	</div>
+
+	<div id="page-footer">
+		<div class="navbar">
+			<ul class="linklist">
+				<li class="icon-home"><a href="{U_INDEX}" accesskey="h">{L_INDEX}</a></li>
+				<!-- IF not S_IS_BOT -->
+				<!-- IF S_WATCH_FORUM_LINK --><li <!-- IF S_WATCHING_FORUM -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{S_WATCH_FORUM_LINK}" title="{S_WATCH_FORUM_TITLE}">{S_WATCH_FORUM_TITLE}</a></li><!-- ENDIF -->
+				<!-- IF U_WATCH_TOPIC --><li <!-- IF S_WATCHING_TOPIC -->class="icon-unsubscribe"<!-- ELSE -->class="icon-subscribe"<!-- ENDIF -->><a href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}">{L_WATCH_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_BOOKMARK_TOPIC --><li class="icon-bookmark"><a href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}">{L_BOOKMARK_TOPIC}</a></li><!-- ENDIF -->
+				<!-- IF U_BUMP_TOPIC --><li class="icon-bump"><a href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}">{L_BUMP_TOPIC}</a></li><!-- ENDIF -->
+				<!-- ENDIF -->
+				<li class="rightside"><!-- IF U_TEAM --><a href="{U_TEAM}">{L_THE_TEAM}</a> &bull; <!-- ENDIF --><!-- IF not S_IS_BOT --><a href="{U_DELETE_COOKIES}">{L_DELETE_COOKIES}</a> &bull; <!-- ENDIF -->{S_TIMEZONE}<!-- IF AFTERBURNER2_MENUPOSITION eq 'full' --><!-- INCLUDE features/colorswitcher.html --><!-- ENDIF --></li>
+			</ul>
+		</div>
+
+		<div class="copyright">{CREDIT_LINE}
+			<!-- IF TRANSLATION_INFO --><br />{TRANSLATION_INFO}<!-- ENDIF -->
+			<!-- IF DEBUG_OUTPUT --><br />{DEBUG_OUTPUT}<!-- ENDIF -->
+			<!-- IF U_ACP --><br /><strong><a href="{U_ACP}">{L_ACP}</a></strong><!-- ENDIF -->
+		</div>
+	</div>
+</div>
+<div>
+	<a id="bottom" name="bottom" accesskey="z"></a>
+	<!-- IF not S_IS_BOT -->{RUN_CRON_TASK}<!-- ENDIF -->
+</div>
+
+</div>
+</div>
+<div class="clear"></div>
+</div>
+
+</div>
+<!-- INCLUDE sidebar.html -->
+<div class="clear"></div>
+</div>
+</div>
+
+</div>
+
+<!-- IF ENABLE_AFTERBURNER2_BOTTOM_MODULES -->
+<div id="rt-bottom">
+	<div class="rt-container">
+		<!-- IF SCRIPT_NAME eq 'viewtopic' -->
+		<!-- IF S_DISPLAY_ONLINE_LIST -->
+		<div class="rt-grid-4 rt-alpha">
+			<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+				<div class="module-surround">
+					<div class="module-title">
+						<h2 class="title"><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h2>
+					</div>
+					<div class="module-content">{LOGGED_IN_USER_LIST}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ENDIF -->
+		<!-- ELSE -->
+		<!-- IF SCRIPT_NAME eq 'viewforum' -->
+		<div class="rt-grid-4 rt-alpha">
+			<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+				<div class="module-surround">
+					<div class="module-title">
+						<h2 class="title"><!-- IF U_VIEWONLINE --><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a><!-- ELSE -->{L_WHO_IS_ONLINE}<!-- ENDIF --></h2>
+					</div>
+					<div class="module-content">{LOGGED_IN_USER_LIST}
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ELSE -->
+		<!-- IF S_DISPLAY_ONLINE_LIST -->
+		<div class="rt-grid-4 rt-alpha">
+			<div class="rt-block {AFTERBURNER2_ONLINE_LIST_STYLE}">
+				<div class="module-surround">
+					<div class="module-title">
+						<!-- IF U_VIEWONLINE -->
+						<h2 class="title"><a href="{U_VIEWONLINE}">{L_WHO_IS_ONLINE}</a></h2>
+						<!-- ELSE -->
+						<h2 class="title">{L_WHO_IS_ONLINE}</h2>
+						<!-- ENDIF -->
+					</div>
+					<div class="module-content">{TOTAL_USERS_ONLINE} ({L_ONLINE_EXPLAIN})<br />
+						{RECORD_USERS}<br />
+						<br />
+						{LOGGED_IN_USER_LIST} <!-- IF LEGEND --><br />
+						<em>{L_LEGEND}: {LEGEND}</em><!-- ENDIF -->
+					</div>
+				</div>	
+			</div>
+		</div>
+		<!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- IF AFTERBURNER2_CONTACT -->
+		<div class="rt-grid-4 rt-omega">
+			<!-- INCLUDE features/contact.html -->    
+		</div>
+		<!-- ENDIF -->
+		<div class="rt-grid-4 rt-alpha">
+			<div class="rt-block {AFTERBURNER2_NEWPOSTS_STYLE}">
+				<div class="module-surround">
+					<div class="module-title"> 				
+						<h2 class="title">{L_SEARCH_NEW}</h2>
+					</div>
+					<div class="module-content">
+						<!-- INCLUDEPHP styles/afterburner2/template/features/new_posts_onecol.php -->		
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!-- ENDIF -->
+
+<!-- IF ENABLE_AFTERBURNER2_FOOTER_MODULES -->
+<div id="rt-footer">
+	<div class="rt-container">
+		<div class="rt-grid-12 rt-alpha rt-omega">
+			<div class="rt-block rt-copyright-block">
+				<!-- IF SHOW_AFTERBURNER2_COPYRIGHT -->
+				<!-- INCLUDE features/copyright.html -->
+				<!-- ENDIF -->
+
+				<!-- IF SHOW_AFTERBURNER2_RESET -->
+				<!-- INCLUDE features/resetsettings.html -->
+				<!-- ENDIF -->
+
+				<!-- IF SHOW_AFTERBURNER2_TOTOP_SCROLLER -->
+				<div class="rt-grid-2"> 
+					<!-- INCLUDE features/totop.html -->	
+				</div>
+				<!-- ENDIF -->
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<!-- ENDIF -->
+</body>
+</html>
+

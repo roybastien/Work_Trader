@@ -1,0 +1,169 @@
+
+
+/*  phpBB 3.0 Style Sheet
+    --------------------------------------------------------------
+	Style name: afterburner2
+	copyright Copyright (C) 2007 - 2011 RocketTheme, LLC
+    license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+    --------------------------------------------------------------
+*/
+
+@media only screen and (min-width: 960px) and (max-width: 1199px) {
+    body #wrap {min-width: 650px;}
+    body dd.lastpost {width: 28%;}
+    body ul.topiclist dt {width: 60%;}
+    body .rokajaxsearch .inputbox {width: 90%;}
+    li.header dt, li.header dd, #page-body .zeromargin h2 {font-size: 13px !important;}
+    .rt-floatingmodule, #floating-container {display: none;}
+    #wrap .title1 .module-title:before, #wrap .title2 .module-title:before, #wrap .title3 .module-title:before, #wrap .title4 .module-title:before {top: 29px;}
+    .menu-block {margin: 25px 40px;}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    body #wrap {min-width: 520px;}
+    body dd.lastpost {display: none;}
+    body .rokajaxsearch .inputbox {width: 80%;}
+    li.header dd {display: none;}
+    ul.topiclist dt {width: 85%;}
+    .rt-suspend {margin-top: 25px !important;}
+    .font-family-afterburner2 .basic li.header dd, .font-family-afterburner2 .basic li.header dd, .font-family-afterburner2 .basic li.header dt, .font-family-afterburner2 .basic li.header a, .font-family-afterburner2 .basic h2 {font-size: 19px !important;}
+    div.fp-rokajaxsearch div.module-content a {display: none !important;}
+    .layout-showcase {padding-bottom: 18px;}
+    li.row .row-inner {min-height: 50px;}
+    .gf-menu .item {padding: 4px 5px;}
+    #wrap .title1 .module-title:before, #wrap .title2 .module-title:before, #wrap .title3 .module-title:before, #wrap .title4 .module-title:before {top: 28px;}
+    .menu-block {margin: 25px 80px;}
+    body .gf-menu.l1 > li > .item {padding: 0 5px;}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 767px) {
+    body #wrap {min-width: 420px;}
+    body dd.lastpost {width: 18%;}
+    body .rokajaxsearch .inputbox {width: 95%;}
+    body .rokajaxsearch a span {width: 100%;float: left;clear: both;}
+    body .fp-rokajaxsearch.rt-block {margin-bottom: 0;}
+    ul.topiclist dt {width: 95%;}
+    .pagination {clear: both;}
+     #page-body .post-bg h2 {margin-bottom: 0;clear: both;display: block;}
+     .postbody ul.profile-icons {float: none;clear: both;margin-bottom: 45px;}
+     #wrap .title1 .module-title:before, #wrap .title2 .module-title:before, #wrap .title3 .module-title:before, #wrap .title4 .module-title:before {top: 23px;}
+      .menu-block {min-height: inherit;}
+      p.author {margin: 0;}
+      #page-body .zeromargin h2 {margin-bottom: 5px;}
+
+    /* Control Panels */
+    body dd.lastpost, fieldset.jumpbox, body li.header, fieldset.display-options, a.left, fieldset.quickmod, th.info, td.info, th.posts, td.posts, #cp-main dd.info, dd.views, dd.topics, #wrap .forabg .mod-smallonline, #wrap .forumbg .mod-smallonline   {display: none !important;}
+    .forabg, .forumbg {margin-top: -10px;}
+    fieldset.fields1 dd {margin-left: 7em;}
+    fieldset.fields1 dt {width: 19%;}
+    table.table1 {width: 85%;}
+    body #tabs a, body #tabs .activetab a, #tabs a span, #tabs .activetab a span {background: none;padding: 0;margin: 0;}
+    body #tabs a, body #tabs .activetab a {padding: 5px;border-bottom-width: 1px !important;border-bottom-style: solid !important;}
+    #tabs li {display: inline-block;margin-bottom: 5px;}
+    #tabs {min-width: 50%;text-align: center;margin-bottom: 5px;margin-top: 10px;}
+    #cp-menu {float: none;width: auto;margin-top: 0;}
+    #navigation {padding-top: 0;}
+    input.search {width: 85px;}
+    .cp-mini {display: none;}
+    #cp-main {width: 99%;}
+    #message-box textarea, #smiley-box  {width: 100%;}
+    #smiley-box {float: none;}
+    #smiley-box br {display: none;}
+    #uploadfile {width: 85% !important;}
+    #cp-main div.panel fieldset span, #postform div.panel fieldset span {display: none;}
+    #cp-main div.panel fieldset dd {width: 50%;overflow: visible;}
+    #cp-main div.panel fieldset select {width: 100% !important;}
+    #wrap select {height: 25px;margin-bottom: 5px;margin-top: 5px;}
+    #cp-main fieldset.fields1 {width: 98% !important;}
+    #cp-main #subject {width: 100% !important;}
+    #postingbox #subject {width: 65% !important;}
+    #attach-panel .autowidth {width: 85% !important;}
+    #postform #fileupload {margin-bottom: 10px;}
+    #cp-main .column1, #cp-main .column2 {float: none;clear: none;width: 83%;}
+    #cp-main fieldset dl.pmlist {overflow: visible !important;}
+    #cp-main #username_list {margin-right: 10px;margin-top: 10px;}
+    #cp-main dl.pmlist dt textarea {width: 85%;}
+    #cp-main div.panel.pm-panel-message fieldset select {width: 62% !important;}
+    #cp-main #export_option {width: 42% !important;}
+    #cp-main .left-box {float: none;text-align: right;}
+    #cp-main fieldset.display-actions {margin-left: -30px;}
+    #cp-main fieldset.display-actions select {width: 50%;}
+    #cp-main fieldset.fields2 dl, #postform fieldset.fields2 dl {overflow: visible;width: 73%;}
+    #cp-main fieldset.fields2 dd, #postform fieldset.fields2 dd {margin-left: 9em;}
+    #cp-main fieldset.fields2 dt, #postform fieldset.fields2 dt {width: 9em;}
+    #cp-main table,#cp-main thead,#cp-main tbody,#cp-main th,#cp-main td,#cp-main tr {display: block; border-color: transparent;text-align: left !important;}
+    #cp-main table.table1 thead th {display: none;}
+    #cp-main tr {margin-top: 10px;}
+    #cp-main #bday_day,#cp-main #bday_month,#cp-main #bday_year {width: 50% !important;}
+    #cp-main dd label {white-space: normal;padding-left: 0;}
+    li.row .row-inner {min-height: 50px;}
+     .sprocket-headlines-list {min-height: inherit !important;min-width: inherit !important;}
+}
+
+@media only screen and (max-width: 480px) {
+    body #wrap {min-width: 100%;}
+     .sprocket-headlines-list {min-height: inherit !important;min-width: inherit !important;}
+    body dd.lastpost, fieldset.jumpbox, body li.header, fieldset.display-options, a.left, fieldset.quickmod, th.info, td.info, th.posts, td.posts, #cp-main dd.info, body .postprofile dd, dd.views, dd.topics, #wrap .forabg .mod-smallonline, #wrap .forumbg .mod-smallonline    {display: none !important;}
+    body ul.topiclist dt {width: 95%;}
+    #wrap .title1 .module-title:before, #wrap .title2 .module-title:before, #wrap .title3 .module-title:before, #wrap .title4 .module-title:before {top: 23px;}
+    .menu-block {min-height: inherit;}
+    body dl.icon dt {padding-right: 14px;}
+    #wrap a.forumtitle, #wrap a.topictitle {font-size: 13px;}
+    body .postprofile {word-wrap: break-word;margin-top: 40px;}
+    input.tiny {width: 39px;padding-left: 8px !important;background-image: none !important;}
+    body .rokajaxsearch .inputbox {width: 95%;}
+    body .rokajaxsearch a span {width: 100%;float: left;clear: both;}
+    ul.linklist li.rightside, p.rightside {display: none;}
+    .search-box fieldset .button {margin-right: -50px;}
+    p.author {margin: 0;}
+    .postbody ul.profile-icons {float: none;width: 150%;clear: both;height: 30px;}
+    .pagination {clear: both;}
+    li.row .row-inner {min-height: 50px;}
+      #page-body .zeromargin h2 {margin-bottom: -5px;}
+
+    /* Control Panels */
+    fieldset.fields1 dd {margin-left: 7em;}
+    fieldset.fields1 dt {width: 19%;}
+    table.table1 {width: 85%;}
+    body #tabs a, body #tabs .activetab a, #tabs a span, #tabs .activetab a span {background: none;padding: 0;margin: 0;}
+    body #tabs a, body #tabs .activetab a {padding: 5px;border-bottom-width: 1px !important;border-bottom-style: solid !important;}
+    #tabs li {display: inline-block;margin-bottom: 5px;}
+    #tabs {min-width: 50%;text-align: center;margin-bottom: 5px;margin-top: 10px;}
+    #cp-menu {float: none;width: auto;margin-top: 0;}
+    #navigation {padding-top: 0;}
+    .cp-mini {display: none;}
+    #cp-main {width: 99%;}
+    #message-box textarea, #smiley-box  {width: 100%;}
+    #smiley-box {float: none;}
+    #smiley-box br {display: none;}
+    #uploadfile {width: 85% !important;}
+    #cp-main div.panel fieldset span, #postform div.panel fieldset span {display: none;}
+    #cp-main div.panel fieldset dd {width: 50%;overflow: visible;}
+    #cp-main div.panel fieldset select {width: 100% !important;}
+    #wrap select {height: 25px;margin-bottom: 5px;margin-top: 5px;}
+    #cp-main fieldset.fields1 {width: 98% !important;}
+    #cp-main #subject {width: 100% !important;}
+    #postingbox #subject {width: 65% !important;}
+    #attach-panel .autowidth {width: 85% !important;}
+    #postform #fileupload {margin-bottom: 10px;}
+    #cp-main .column1, #cp-main .column2 {float: none;clear: none;width: 83%;}
+    #cp-main fieldset dl.pmlist {overflow: visible !important;}
+    #cp-main #username_list {margin-right: 10px;margin-top: 10px;}
+    #cp-main dl.pmlist dt textarea {width: 85%;}
+    #cp-main div.panel.pm-panel-message fieldset select {width: 62% !important;}
+    #cp-main #export_option {width: 42% !important;}
+    #cp-main .left-box {float: none;text-align: right;}
+    #cp-main fieldset.display-actions {margin-left: -30px;}
+    #cp-main fieldset.display-actions select {width: 50%;}
+    #cp-main fieldset.fields2 dl, #postform fieldset.fields2 dl {overflow: visible;width: 73%;}
+    #cp-main fieldset.fields2 dd, #postform fieldset.fields2 dd {margin-left: 9em;}
+    #cp-main fieldset.fields2 dt, #postform fieldset.fields2 dt {width: 9em;}
+    #cp-main table,#cp-main thead,#cp-main tbody,#cp-main th,#cp-main td,#cp-main tr {display: block; border-color: transparent;text-align: left !important;}
+    #cp-main table.table1 thead th {display: none;}
+    #cp-main tr {margin-top: 10px;}
+    #cp-main #bday_day,#cp-main #bday_month,#cp-main #bday_year {width: 50% !important;}
+    #cp-main dd label {white-space: normal;padding-left: 0;}
+
+    .main-surround .zeromargin .basic h2, .main-surround .zeromargin .basic h2 a {margin-bottom: 3px !important;margin-left: 15px !important;margin-top: -4px !important;padding-bottom: 0px !important;}
+    .layout-mode-responsive .gf-menu-device-wrapper {margin-bottom: 25px !important;}
+}

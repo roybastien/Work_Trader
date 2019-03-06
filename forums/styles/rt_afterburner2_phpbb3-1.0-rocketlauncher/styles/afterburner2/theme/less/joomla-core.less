@@ -1,0 +1,283 @@
+/**
+* @version   $Id: joomla-core.less 9501 2013-04-19 20:44:14Z james $
+* @author    RocketTheme http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2013 RocketTheme, LLC
+* @license   http://www.rockettheme.com/legal/license.php RocketTheme Proprietary Use License
+*/
+
+// Core
+.component-body {
+	padding: 20px;
+}
+
+// Settings
+.component-content {
+	.page-header {
+		border-bottom: 0;
+	}
+}
+
+// Article
+.component-content {
+	.blog-featured {
+		h2 {
+			margin-top: 0;
+		}
+	}
+	.blog {
+		h2 {
+			margin-top: 0;
+		}
+	}
+	.item-page {
+		h2 {
+			margin-top: 0;
+		}
+	}
+}
+
+
+// Member Access
+.component-content {
+	#password-lbl, #username-lbl {
+		width: 130px;
+		display: block;
+		float: left;
+		font-size: 1.2em;
+		line-height: 2em;
+	}
+	.login {
+		.control-label {
+			padding-top: 0;
+		}
+	}
+	.login-fields {
+		margin-bottom: 5px;
+		#remember-lbl {
+			display: inline-block;
+			margin-right: 5px;
+		}
+		#remember {
+			margin: 0;
+		}
+	}
+}
+.component-content .login-fields #username, .login-fields #password, #contact-form dd input, #contact-form dd textarea, #modlgn-username, #modlgn-passwd, #jform_email, #member-registration dd input, #search-searchword, .finder .inputbox {
+	padding: 4px;
+	.border-radius(3px);
+	line-height: 1.6em;
+}
+.component-content .login + div {
+	margin-top: 12px;
+}
+.component-content .login + div ul li, #login-form li {
+	list-style: none;
+}
+.component-content .login + div ul li a:before, #login-form a:before {
+	font-family: FontAwesome;
+	content: "\f059";
+	margin-right: 4px;
+}
+
+.component-content .login + div ul {
+	padding: 0;
+	margin-left: 0;
+}
+.component-content .login-description {
+	margin: 10px 0;
+}
+
+// Login Module
+#login-form {
+	.userdata {
+		margin: 12px 0;
+	}
+	ul {
+		padding: 0;
+		margin-left: 0;
+		li {
+			a {
+				font-size: @baseFontSize;
+			}
+		}
+	}
+	input[type="text"], input[type="password"] {width: 94%;}
+	#form-login-remember {
+		label {
+			display: inline-block;
+		}
+		input {
+			margin: 0;
+		}
+	}
+}
+
+// Breadcrumbs Module
+#rt-breadcrumbs {
+	.breadcrumb, [class^="breadcrumb"] {
+		padding: 0;
+		margin: 0;
+		li {
+			list-style: none;
+			float: left;
+			margin-right: 10px;
+			a {
+				&:after {
+					margin-right: 0;
+				}
+			}
+		}
+		a {
+			&:after {
+				margin: 0 10px;
+			}
+		}
+		img {
+			display: none;
+		}
+	}
+	a {
+		font-size: @baseFontSize;
+		&:after {
+			font-family: FontAwesome;
+			content: "\f054";
+			margin: 0 5px 0 10px;
+		}
+	}
+	.showHere {
+		font-weight: bold;
+		margin-right: 5px;
+	}
+	.rt-block {
+		padding: 10px 15px;
+	}
+	.divider {
+		display: none;
+	}
+	li:first-child {
+		.divider {
+			display: inline;
+		}
+	}
+}
+
+
+
+// Forms
+.component-content #member-registration {
+	padding: 0 5px;
+}
+
+.invalid, .login-fields #username.invalid, .login-fields #password.invalid, #contact-form dd input.invalid, #contact-form dd textarea.invalid, #modlgn-username.invalid, #modlgn-passwd.invalid, #jform_email.invalid, #member-registration dd input.invalid, #search-searchword.invalid, .finder .inputbox.invalid, .inputbox.invalid {
+	border-color: #ff0000;
+}
+label.invalid {
+	color: #ff0000 !important;
+}
+input[type="radio"], input[type="checkbox"] {
+	margin-right: 5px;
+}
+
+// Search
+.component-content {
+	.searchintro {
+		font-weight: normal;
+		margin: 20px 0 20px;
+	}
+	#searchForm {
+		.inputbox {
+			margin-bottom: 0;
+		}
+		input[type="radio"], input[type="checkbox"] {
+			float: left;
+		}
+	}
+	#searchForm, #finder-search {
+		padding: 0 5px;
+	}
+	.form-limit {
+		margin: 20px 0 0;
+		text-align: right;
+		padding: 0 10px 0 20px;
+	}
+	.highlight {
+		font-weight: bold;
+	}
+	.ordering-box {
+		width: 40%;
+		float: right;
+	}
+	.phrases-box {
+		width: 60%;
+		float: left;
+	}
+	.only, .phrases {
+		margin: 10px 0 0 0;
+		line-height: 1.3em;
+	}
+	label.ordering {
+		display: block;
+		margin: 10px 0 10px 0;
+	}
+	.word {
+		padding: 10px 10px 10px 0;
+	}
+	.word input {
+		font-weight: bold;
+		padding: 4px;
+		font-size: @baseFontSize;
+	}
+	.word label {
+		font-weight: bold;
+	}
+	fieldset.only label, fieldset.phrases label {
+		margin: 0 10px 0 0;
+	}
+	.ordering-box label.ordering {
+		margin: 0 10px 5px 0;
+	}
+	form .search label, form .finder label {
+		display: none;
+	}
+	form #finder-filter-select-list label {
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 2px;
+	}
+	.search legend {
+		font-weight: bold;
+	}
+	.search-results .result-title {
+		padding: 15px 15px 0 5px;
+		font-weight: bold;
+	}
+	.search-results dd {
+		padding: 2px 15px 2px 5px;
+	}
+	.search-results .result-text {
+		padding: 10px 15px 10px 5px;
+		line-height: 1.7em;
+	}
+	.search-results .result-url {
+		font-size: @baseFontSize;
+		padding: 2px 15px 15px 5px;
+	}
+	.search-results .result-created {
+		padding: 2px 15px 15px 5px;
+	}
+	.search-results .result-category {
+		padding: 10px 15px 5px 5px;
+	}
+}
+
+
+// Debug
+#system-debug {
+	color: @light-grey;
+	background-color: @white;
+	padding: 10px;
+	margin: 10px;
+	div {
+		font-size: 11px;
+	}
+}

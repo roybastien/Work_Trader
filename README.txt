@@ -1,0 +1,11 @@
+CS4540 Final Project
+Roy Bastien and Parker Mitchell
+
+The goal of this project was to provide a modern looking, user friendly environment, for non-monetary trading.  The idea is a simple one and is that everyone has specialities that should be used for service bartering.  This idea stemmed from in interaction that Roy had with a contractor who was installing his sprinklers.  The landscaper desperately needed some branding design help including the creation of a modern website and Roy didn’t really want to pay the price for having the sprinklers installed.  Nothing came of the interaction but after talking to Parker about it, we decided that it would be a fun investigation for the project. So we decided to build a social platform centered around the idea of bringing people together to trade work.  WorkTrader!
+
+After brainstorming what the best method for user interaction for this purpose would be, we decided on a forum based approach that would also need to include private messaging as a feature.  Users could “shop around” their skillset on the forums but move into private messages when a public eye was no longer needed.  We researched software to use and found phpbb3 to be the most straightforward and user friendly.  After about 6hrs of installation, Jim finally helped remove additional security measures he added on the VMs and we were all set up with the forum.
+
+We used a bootstrap skeleton to engineer the homepage UI but had to do a lot of customization.  The most difficult UI customization was that we wanted users to login, logout, and register from on our bootstrap pages outside of the forum.  We achieved that as well as the ability to add customization to the existing internal phpbb3 databases. Logged in users have the ability to privately message each other, post forums, comment in existing forums, and pretty much everything else one expects from a forum.
+
+In order to successfully implement what we did, it required a fundamentally sound understanding of PHP, CSS, HTML, Bootstrap, SQL, Database Structures, and Sessions.  On top of implementing most of the subjects covered in the class, we also took it upon ourselves to branch out further and do something not covered in the lectures or class notes in the phpbb3 implementation.
+

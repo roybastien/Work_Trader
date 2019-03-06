@@ -1,0 +1,401 @@
+/* WebIcons support for phpBB3
+---------------------------------------- */
+@font-face {
+	font-family: 'RocketThemeForum';
+	src:url('../fonts/RocketThemeForum.eot');
+	src:url('../fonts/RocketThemeForum.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/RocketThemeForum.woff') format('woff'),
+		url('../fonts/RocketThemeForum.ttf') format('truetype'),
+		url('../fonts/RocketThemeForum.svg#RocketThemeForum') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+div.forum-icon:before, div.topic-icon:before {
+	font-family: 'RocketThemeForum';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	position: absolute;
+	font-size: 30px;
+	margin-top: 14px;
+	margin-left: 14px;
+	color: @maintext;
+}
+div.topic-icon:before {
+	font-size: 28px;
+}
+
+// Icons - forum
+div.forum-icon {
+	&.unread {
+		color: @maintext;
+	}
+	&:before {
+		content: "\f07c"
+	}
+	&.link:before {
+		content: "\e005";
+		margin-left: 13px;
+		margin-top: 12px;
+	}
+	&.locked:before {
+		content: "\f023";
+		font-size: 34px;
+		margin-left: 16px;
+		margin-top: 11px;
+	}
+
+}
+
+// Icons - topic
+div.topic-icon {
+	&.unread {
+		color: @maintext;
+	}
+	&:before {
+		content: "\e008";
+	}
+	&.locked:before, &.topiclocked:before, &.announcelocked:before, &.stickylocked:before {
+		content: "\f023";
+		font-size: 34px;
+		margin-left: 16px;
+		margin-top: 11px;
+	}
+	&.moved:before {
+		content: "\e044";
+	}
+	&.global-announce:before, &.announce:before {
+		content: "\e00a";
+	}
+	&.sticky:before {
+		content: "\e009";
+	}
+	&.reported:before {
+		content: "\e07f";
+		font-size: 31px;
+	margin-top: 15px;
+	margin-left: 18px;
+	}
+	&.poll:before {
+		content: "\e082";
+	}
+	&.unapproved:before {
+		content: "\e08e";
+	}
+	&.hot:before {
+		content: "\e060";
+	}
+}
+
+// Icons - various
+#wrap {
+	.sitehome, .icon-faq, .icon-members, .icon-home, .icon-ucp, .icon-register, .icon-logout, .icon-bookmark, .icon-bump, .icon-subscribe, .icon-unsubscribe, .icon-pages, .row .pagination, .icon-search, .icon-print, .icon-email, a.up, a.down, a.left, a.right, blockquote, .feed-icon-forum, .subforum, .icon-lastpost, .icon-newest, .icon-attach, dl.file, .icon-reported, .icon-unapproved {
+		background-image: none !important;
+		&:before {
+			font-family: 'RocketThemeForum';
+			content: attr(data-icon);
+			speak: none;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			position: absolute;
+			font-size: 16px;
+			margin-top: 4px;
+			margin-left: -21px;
+		}
+		a {
+			background-image: none !important;
+		}
+	}
+	.sitehome:before, .icon-home:before {
+		content: "\e0d7";
+	}
+	.icon-unsubscribe:before {
+		content: "\e0c2";
+	}
+	.icon-subscribe:before {
+		content: "\e0c3";
+	}
+	.icon-faq:before {
+		content: "\e0df";
+	}
+	.icon-members:before {
+		content: "\e05d";
+	}
+	.icon-ucp:before {
+		content: "\e0bd";
+	}
+	.icon-register:before {
+		content: "\e05c";
+	}
+	.icon-logout:before {
+		content: "\e045";
+	}
+	.icon-bookmark:before {
+		content: "\e0e2";
+	}
+	.icon-bump:before {
+		content: "\e0dd";
+	}
+	.row .pagination:before, .icon-pages:before {
+		content: "\e03b";
+		margin-left: -18px;
+	}
+	.icon-search:before {
+		content: "\e0a6";
+	}
+	.icon-print:before {
+		content: "\e0d9";
+	}
+	.icon-email:before {
+		content: "\e0cb";
+	}
+	a.down:before {
+		content: "\e02b";
+	}
+	a.up:before {
+		content: "\e000";
+	}
+	a.right:before {
+		content: "\e02d";
+		right: 15px;
+		margin-top: 3px;
+	}
+	a.left:before {
+		content: "\e002";
+		margin-top: 3px;
+	}
+	blockquote:before {
+		content: "\e02c";
+		margin-left: -2px;
+		margin-top: -21px;
+		font-size: 20px;
+	}
+	.feed-icon-forum:before {
+		content: "\e003";
+	}
+	.subforum:before {
+		content: "\e0d0";
+		margin-left: -14px;
+		font-size: 13px;
+		margin-top: 4px;
+	}
+	.icon-lastpost:before {
+		content: "\e031";
+		margin-left: -8px;
+		margin-top: -10px;
+		font-size: 11px;
+	}
+	.icon-newest:before {
+		content: "\e0d1";
+		margin-top: -10px;
+		margin-left: -7px;
+		font-size: 11px;
+	}
+	.icon-reported:before {
+		content: "\e07f";
+		margin-top: -10px;
+		margin-left: -7px;
+		font-size: 11px;
+	}
+	.icon-unapproved:before {
+		content: "\e08e";
+		margin-top: -10px;
+		margin-left: -7px;
+		font-size: 11px;
+	}
+	.icon-attach:before {
+		content: "\e0b8";
+		margin-top: -10px;
+		margin-left: -8px;
+		font-size: 11px;
+	}
+	dl.file:before {
+		content: "\e0b8";
+		margin-top: 4px;
+		margin-left: -18px;
+		font-size: 11px;
+	}
+}
+
+// Icons - topic,pm
+#wrap {
+	.email-icon, .aim-icon, .yahoo-icon, .web-icon, .msnm-icon, .icq-icon, .jabber-icon, .pm-icon, .quote-icon, .report-icon, .edit-icon, .delete-icon, .info-icon, .warn-icon, .pmreply-icon, .newpm-icon, .forwardpm-icon, .back2top {
+		background-image: none !important;
+		border-radius: 3px;
+
+		a:before {
+			font-family: 'RocketThemeForum';
+			content: attr(data-icon);
+			speak: none;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			position: absolute;
+			font-size: 14px;
+			margin-top: 3px;
+			margin-left: 2px;
+			z-index: 1; 
+			color: darken(@box1border, 40%);
+			text-decoration: none;
+		}
+		a {
+			position: relative;
+			z-index: 20;
+			text-decoration: none;
+		}
+	}
+	.email-icon a:before {
+		content: "\e0cb";
+	}
+	.aim-icon a:before {
+		content: "\22";
+		font-size: 12px;
+	}
+	.icq-icon a:before {
+		content: "\f304";
+	}
+	.yahoo-icon a:before {
+		content: "\e004";
+	}
+	.msnm-icon a:before {
+		content: "\26";
+	}
+	.web-icon a:before {
+		content: "\e0b4";
+	}
+	.jabber-icon a:before {
+		content: "\f317";
+		margin-left: 6px;
+	}
+	.pm-icon a:before {
+		content: "\e0c9";
+	}
+	.newpm-icon a:before {
+		content: "\e0c9";
+		font-size: 25px;
+		margin-top: 3px;
+		margin-left: 4px;
+	}
+	.pmreply-icon a:before {
+		content: "\e08d";
+		font-size: 22px;
+		margin-top: 3px;
+		margin-left: 6px;
+	}
+	.forwardpm-icon a:before {
+		content: "\e044";
+		font-size: 25px;
+		margin-top: 3px;
+		margin-left: 4px;
+	}
+	.quote-icon a:before {
+		content: "\e02c";
+		font-size: 17px;
+		margin-top: 2px;
+	}
+	.report-icon a:before {
+		content: "\e07f";
+		margin-left: 3px;
+	}
+	.edit-icon a:before {
+		content: "\e0d3";
+	}
+	.delete-icon a:before {
+		content: "\e0b5";
+	}
+	.info-icon a:before {
+		content: "\e03d";
+	}
+	.warn-icon a:before {
+		content: "\e08e";
+	}
+	.back2top a:before {
+		content: "\e000";
+		margin-left: -18px;
+	}
+}
+
+// Icons - fixes and overrides
+#wrap {
+	.online, a.top2 {
+		background-image: none !important;
+		border-radius: 3px;
+
+		&:before {
+			font-family: 'RocketThemeForum';
+			content: attr(data-icon);
+			speak: none;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			position: absolute;
+			font-size: 14px;
+			margin-top: 3px;
+			margin-left: 2px;
+			z-index: 1; 
+			color: darken(@box1border, 40%);
+			text-decoration: none;
+		}
+		a {
+			position: relative;
+			z-index: 20;
+			text-decoration: none;
+		}
+	}
+	.online:before {
+		content: "\e0e0";
+		right: 13px;
+		font-size: 30px;
+		margin-top: -20px;
+	}
+	a.top2:before {
+		content: "\e000";
+		margin-left: -12px;
+	}
+	a.top2 {
+		&:before {margin-left: -25px;}
+		margin-left: 12px;
+	}
+}
+
+// Icons - fixes and overrides
+input.search     {background-image: url("../images/main/search-controls.png") !important;}
+#wrap {
+	p.author {
+		a {
+			img {
+				content: '';
+				background: none;
+				display: none;
+			}
+		}
+	}
+}
+dl.file {
+	padding-left: 20px;
+	img {
+	display: none;
+	}
+}
+p.rules .icon-reported {
+	margin-left: 14px;
+	&:before {
+		margin-top: 4px !important;
+		margin-left: -14px !important;
+	}
+}
+
+

@@ -1,0 +1,204 @@
+@import "variables.less";
+@import "jui/less/mixins.less";
+@import "mixins/index.less";
+@import "forum-icons.less";
+
+// Main Section ----------------
+@mainbackground:		#FFFFFF;
+@maintext:              #9399A1;
+@maintitle:				#32373D;
+@mainborder:			#EFEFEF;
+
+// Modules ---------------------
+@box1background:      	#D9EBEF;
+@box1text:				#6A727D;
+@box1border: 			#BBDBE1;
+@box1readmore:			darken(@box1border, 10%);
+
+// Colors ----------------------
+@rokred:                #DF7371;
+@rokgrey:               #495565;
+@rokblue:   			#00ABEF;
+@rokgreen:       		#55D1BB;
+@rokdarkgrey: 			#343C47;
+
+
+/* Buttons and stuff
+---------------------------------------- */
+a.button1, input.button1, input.button3, a.button2, input.button2{
+	padding: 6px 25px 6px 15px;
+	line-height: 1.7em;
+	font-size: 0.8em;
+	border-radius: 3px;
+	text-transform: uppercase;
+	color: @white;
+	background-image: none;
+	border: 0;
+	border: darken(@linkcolor, 20%);
+	background: @accentcolor;
+	&:hover {
+		color: @white;
+		background: @rokgrey;
+		border-color: darken(@rokgrey, 10%);
+	}
+	&:active {
+		background: @rokgrey;
+	}
+}	
+
+/* Forum Styling and Joomla overrides
+---------------------------------------- */
+#wrap {
+	 .pagination span strong, .pagination span a:hover {
+	 	background: @accentcolor !important;
+	 	color: @white !important;
+	 	.transition(all 0.1s ease-in);
+	 }
+	.zeromargin {
+		.box1 {
+			padding: 15px;
+			margin-bottom: 20px;
+
+			ul.forums,ul.topics, li.row  {
+				padding: 0;
+				margin: 0;
+			}
+		}
+		.forabg, .forumbg {
+			border-top: 6px solid @mainborder;
+		}
+	}
+	li.header dt, li.header dd, h2.title a, h2.title {
+		text-transform: none;
+		font-size: 18px !important;
+		letter-spacing: normal;
+		color: @bodytitle;
+		font-weight: bold !important;
+	}
+	.forum-icon,.topic-icon {
+		width: 50px;
+		height: 50px;
+		float: left;
+
+		&.unread:before {
+			color: @accentcolor;
+		}
+	}
+	li.row {
+		margin-left: 67px;
+		clear: both;
+		margin-top: 12px;
+		margin-bottom: 12px;
+	}
+}
+
+/* UCP/MCP
+---------------------------------------- */
+#wrap {
+	#minitabs li, .buttons div, ul.profile-icons li {
+		background: @box1border;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background: lighten(@box1border, 15%);
+		}
+	}
+	blockquote, dl.codebox {
+		background-color: lighten(@box1border, 15%);
+	}
+
+	div.panel.bg3 , #tabs .activetab a, #tabs a:hover,{
+		background: lighten(@accentcolor, 20%);
+		transition: background-color 0.3s;
+	}
+	#tabs a {
+		border-color: lighten(@accentcolor, 30%);
+	}
+	#navigation a {
+		background: lighten(@accentcolor, 20%);
+		font-weight: bold;
+	}
+	div.panel.bg3 {
+		border-radius: 5px;
+	}
+}
+
+
+/* Icon images
+---------------------------------------- */
+#rt-accessibility {
+	.rt-desc {
+		float: left;
+		margin-right: 8px;
+		font-weight: bold;
+	}
+	#rt-buttons {
+		.button {
+			padding: 0;
+			width: 18px;
+			height: 18px;
+			text-align: center;
+			vertical-align: middle;
+			border-radius: 3px;
+			&:after {
+				right: 8px;
+				top: 2px;
+			}
+		}
+		.small {
+			font-size: inherit;
+		}
+		.small .button:after {
+			content: '-';
+		}
+		.large .button:after {
+			content: '+';
+			right: 6px;
+				top: 0px;
+
+		}
+	}
+}
+
+/* Posts/Reply Count
+---------------------------------------- */
+.posts_container {
+	margin: 0 0 20px;
+	text-align: center;
+	margin-left: -67px;
+	padding: 0;
+	padding-top: 10px;
+	width: 60px;
+	height: 46px;
+	position: absolute;
+	z-index: 100;
+	margin-top: 1px;
+	background-color: @mainborder;					
+	.transition(all 0.1s ease-in);
+	border-radius: 5px;
+
+	&.unread{
+		background: @accentcolor;
+
+		.post_count,.post_count a, .post_desc, .post_desc a {
+			color: @white !important;
+		}
+	}
+
+	.post_desc {
+		padding-top: 4px;
+	}
+	.post_count,.post_count a {
+		color: darken(@maintext, 20%) !important;
+		font-size: 20px !important;
+		font-weight: bold;
+		line-height: 19px !important;
+	}
+	.post_desc, .post_desc a {
+		color: @maintext !important;
+		text-transform: uppercase;
+		font-size: 12px !important;
+		line-height: 29px !important;
+	}
+}
+

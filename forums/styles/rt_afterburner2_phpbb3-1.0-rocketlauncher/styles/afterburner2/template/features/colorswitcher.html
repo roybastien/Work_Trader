@@ -1,0 +1,6 @@
+<form name="chooserform" method="post" action="index.php"><select name="style_chooser" id="variation_chooser"
+				    onchange="if(this.options[this.selectedIndex].value != ''){window.location.href=this.options[this.selectedIndex].value}">                           
+				    <option value="index.php?ntheme=style1"<!-- IF CURRENT_STYLE eq 'style1'-->selected="selected"<!-- ENDIF -->>Style 1</option>
+				    <option value="index.php?ntheme=style2"<!-- IF CURRENT_STYLE eq 'style2'-->selected="selected"<!-- ENDIF -->>Style 2</option>
+				    <option value="index.php?ntheme=style3"<!-- IF CURRENT_STYLE eq 'style3'-->selected="selected"<!-- ENDIF -->>Style 3</option>
+</select></form>

@@ -1,0 +1,356 @@
+<!-- INCLUDEPHP styles/afterburner2/template/styleswitcher.php -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}" xml:lang="{S_USER_LANG}">
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
+<meta http-equiv="content-style-type" content="text/css" />
+<meta http-equiv="content-language" content="{S_USER_LANG}" />
+<meta http-equiv="imagetoolbar" content="no" />
+<meta name="resource-type" content="document" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="2000, 2002, 2005, 2007 phpBB Group" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{META}
+<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
+
+<!-- IF S_ENABLE_FEEDS -->
+	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
+	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
+<!-- ENDIF -->
+
+<!-- INCLUDEPHP rokbb.php -->
+<!-- INCLUDEPHP styles/afterburner2/template/afterburner2.php -->
+<!--
+	phpBB style name: afterburner2
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by: RocketTheme, LLC (C) Copyright. All rights reserved.     
+	
+	
+-->
+<script type="text/javascript">
+// <![CDATA[
+	var jump_page = '{LA_JUMP_PAGE}:';
+	var on_page = '{ON_PAGE}';
+	var per_page = '{PER_PAGE}';
+	var base_url = '{A_BASE_URL}';
+	var style_cookie = 'phpBBstyle';
+	var style_cookie_settings = '{A_COOKIE_SETTINGS}';
+	var onload_functions = new Array();
+	var onunload_functions = new Array();
+
+	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
+		var url = '{UA_POPUP_PM}';
+		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
+	<!-- ENDIF -->
+
+	/**
+	* Find a member
+	*/
+	function find_username(url)
+	{
+		popup(url, 760, 570, '_usersearch');
+		return false;
+	}
+
+	/**
+	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
+	*/
+	window.onload = function()
+	{
+		for (var i = 0; i < onload_functions.length; i++)
+		{
+			eval(onload_functions[i]);
+		}
+	};
+
+	window.onunload = function()
+	{
+		for (var i = 0; i < onunload_functions.length; i++)
+		{
+			eval(onunload_functions[i]);
+		}
+	};
+
+// ]]>
+</script>
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/styleswitcher.js"></script>
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
+
+<!--
+This is the begining of the full width section for UCP, MCP and similar. Remove it if you want to preserve sidepanel in UCP, MCP etc..
+-->
+
+<!-- IF U_PROFILE_STYLE or U_MCP_STYLE or U_PRIVATEMSGS_STYLE -->
+<!-- PHP -->
+global $template, $config;
+	$template->assign_vars(array(
+		'AFTERBURNER2_MENUPOSITION'		=> "full",
+		'AFTERBURNER2_TABS'		=> false
+		)
+	);
+<!-- ENDPHP -->	
+<!-- ENDIF -->
+
+<!--
+End of the full width for ucp.
+-->
+
+<!-- IF ENABLE_WEBFONTS -->
+ <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=<!-- PHP -->global $config; $font = str_replace(" ","+",$config['afterburner2_font_family']); echo $font;<!-- ENDPHP -->" type="text/css" />
+ <!-- ENDIF -->
+
+<!-- INCLUDEPHP styles/afterburner2/template/less.php -->
+
+<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- IF AFTERBURNER2_LAYOUT_MODE eq 'responsive' -->
+<link href="{T_THEME_PATH}/phpbb3-responsive.css" rel="stylesheet" type="text/css" media="screen, projection"  />
+<!-- ENDIF -->
+<!-- IF IE_VERSION eq '8'-->
+<link href="{T_THEME_PATH}/css/master-ie8.css" rel="stylesheet" type="text/css" media="screen, projection"  />
+<!-- ENDIF -->
+<!-- IF IE_VERSION eq '9'-->
+<link href="{T_THEME_PATH}/css/master-ie9.css" rel="stylesheet" type="text/css" media="screen, projection"  />
+<!-- ENDIF -->
+<!-- IF IE_VERSION eq '10'-->
+<link href="{T_THEME_PATH}/css/master-ie10.css" rel="stylesheet" type="text/css" media="screen, projection"  />
+<!-- ENDIF -->
+<link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" />
+<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
+	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+<link href="{T_THEME_PATH}/light-phpbb3.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<link href="{T_THEME_PATH}/small.css" rel="alternate stylesheet" type="text/css" title="A--" />
+<link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" />
+<link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" />
+<link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" />
+
+<style type="text/css">
+.posts_container {width: {AFTERBURNER2_POSTS_CONTAINER_SIZE}px;}
+<!-- IF S_CONTENT_DIRECTION neq 'rtl' -->
+<!-- IF AVATAR_POSITION == left -->
+	.postprofile {float: left; border-right: 1px solid;border-left:0 none; margin-left: -6px;width: 21%;}
+	.postbody {float: right;}
+	ul.profile-icons {margin-right: 40px;}
+	.online {background-position: 17% -1%;}
+<!-- ENDIF -->	
+<!-- ENDIF -->
+ </style>
+<!-- IF IE_VERSION eq '8'-->
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/html5shim.js"></script>
+<!-- ENDIF -->
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/mootools-core.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/mootools-more.js"></script>
+
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/gantry-totop.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/browser-engines.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/rokmediaqueries.js"></script>
+<!-- IF IE_VERSION neq '8'-->
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/mod_roknavmenu/rokmediaqueries.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rt_js/mod_roknavmenu/responsive.js"></script>
+<!-- ENDIF -->
+
+<script type="text/javascript">
+window.addEvent('domready', function(){ new Fx.SmoothScroll({ link: 'cancel', offset: {x: 0, y: -60}}); });
+		
+var RokScrollEvents = [], RTScroll = function(){
+    if (!RokScrollEvents.length) window.removeEvent('scroll', RTScroll);
+    else {
+        for (var i = RokScrollEvents.length - 1; i >= 0; i--){
+            RokScrollEvents[i]();
+        };
+    }
+};
+window.addEvent('scroll', RTScroll);
+if (typeof RokSprocket == 'undefined') RokSprocket = {};
+Object.merge(RokSprocket, {
+	SiteURL: '{ROOT_PATH}',
+	CurrentURL: '{U_INDEX}',
+});
+</script>
+
+<!-- RokBox phpBB3 Code Start -->
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rokbox/rokbox.js"></script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/rokbox/themes/<!-- IF ROKBOX_THEME -->{ROKBOX_THEME}<!-- ELSE -->light<!-- ENDIF -->/rokbox-config.js"></script>
+<link href="{T_TEMPLATE_PATH}/rokbox/themes/<!-- IF ROKBOX_THEME -->{ROKBOX_THEME}<!-- ELSE -->light<!-- ENDIF -->/rokbox-style.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- IF IE_VERSION eq '7' -->
+<link href="{T_TEMPLATE_PATH}/rokbox/themes/<!-- IF ROKBOX_THEME -->{ROKBOX_THEME}<!-- ELSE -->light<!-- ENDIF -->/rokbox-style-ie7.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+<!-- IF IE_VERSION eq '8' -->
+<link href="{T_TEMPLATE_PATH}/rokbox/themes/<!-- IF ROKBOX_THEME -->{ROKBOX_THEME}<!-- ELSE -->light<!-- ENDIF -->/rokbox-style-ie8.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+<!-- RokBox phpBB3 Code End -->
+
+<!-- IF ENABLE_WEBFONTS -->
+<style type="text/css">
+h1,h2,li.header dt, li.header dd, h3,li.header dt a, body, input, button, select, textarea, .gf-menu .item, dl.codebox code, #wrap .module-title h2 a, #wrap .module-title h2, #wrap .readon, .promo1, .promo2, .sprocket-headlines-list  {font-family: "{AFTERBURNER2_FONTFACE}", arial, serif !important; }
+</style>
+<!-- ENDIF -->
+</head>
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION} logo-type-afterburner2 headerstyle-{AFTERBURNER2_HEADERSTYLE} menustyle-{AFTERBURNER2_MENUSTYLE} footerstyle-{AFTERBURNER2_FOOTERSTYLE} font-family-{AFTERBURNER2_FONT_FAMILY} font-size-is-{AFTERBURNER2_FONTSIZE} logo-enabled-<!-- IF ENABLE_AFTERBURNER2_LOGO -->1<!-- ELSE -->0<!-- ENDIF --> menu-type-dropdownmenu typography-style-<!-- IF AFTERBURNER2_TYPOGRAPHY_STYLE -->{AFTERBURNER2_TYPOGRAPHY_STYLE}<!-- ELSE -->light<!-- ENDIF --> col12 forum-layout-{AFTERBURNER2_MENUPOSITION} phpbb3-{CURRENT_STYLE} layout-mode-{AFTERBURNER2_LAYOUT_MODE}">	
+	<header id="rt-top-surround">
+		
+		<!-- IF ENABLE_AFTERBURNER2_TOP_MODULES -->
+		<div id="rt-top">
+			<div class="rt-container">
+				<!-- IF SHOW_AFTERBURNER2_DATE --> 
+				<!-- INCLUDE features/date.html -->
+				<!-- ENDIF -->
+
+				<!-- IF SHOW_AFTERBURNER2_FONT -->
+				<!-- INCLUDE features/fontsizer.html -->
+				<!-- ENDIF -->
+
+
+				<!-- IF ENABLE_AFTERBURNER2_LOGO -->
+				<!-- INCLUDE features/logo.html -->
+				<!-- ENDIF -->
+				
+				<div class="rt-grid-<!-- IF ENABLE_AFTERBURNER2_LOGO -->7<!-- ELSE --><!-- IF AFTERBURNER2_SEARCH_POSITION eq 'top' -->10<!-- ELSE -->12<!-- ENDIF --><!-- ENDIF --> rt-alpha">	
+					<div class="rt-block menu-block">
+						<!-- INCLUDE features/menu.html -->
+					</div>
+					<div class="clear"></div>			
+				</div>
+
+				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+				<!-- IF AFTERBURNER2_SEARCH_POSITION eq 'top' -->
+				<div class="rt-grid-2 rt-omega">
+					<div class="rt-block fp-rokajaxsearch hidden-phone">
+						<div class="module-surround">
+							<div class="module-content">
+								<form action="{U_SEARCH}" method="post" id="rokajaxsearch" class="blue">
+									<div class="rokajaxsearch fp-search nomarginbottom nopaddingbottom">
+										<div class="roksearch-wrapper"><input name="keywords" id="roksearch_search_str" type="text" title="{L_SEARCH_KEYWORDS}" class="inputbox" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ELSE -->{L_SEARCH_MINI}<!-- ENDIF -->"
+											onclick="if(this.value=='{LA_SEARCH_MINI}')this.value='';" onblur="if(this.value=='')this.value='{LA_SEARCH_MINI}';" /></div>
+										</div>
+										{S_SEARCH_HIDDEN_FIELDS}
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ENDIF -->
+					<!-- ENDIF -->
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+			<!-- ENDIF -->
+
+			<!-- IF ENABLE_AFTERBURNER2_HEADER_MODULES -->
+			<div id="rt-header" class="<!-- IF AFTERBURNER2_HEADER_OVERLAY eq 'light' -->rt-light<!-- ELSE -->rt-dark<!-- ENDIF -->">
+				<div class="rt-container">
+					<div class="rt-grid-12 rt-alpha rt-omega">
+						<div class="rt-block  promo nomargintop nopaddingtop nomarginbottom nopaddingbottom">
+							<div class="module-surround">
+								<div class="module-content">
+									<div class="custom promo nomargintop nopaddingtop nomarginbottom nopaddingbottom">
+										<div class="rt-center largemargintop largemarginbottom smallpaddingbottom">
+											<h1 class="largemargintop largemarginbottom medpaddingbottom">{SITENAME}</h1>
+											<h4 class="nobold"><em>{SITE_DESCRIPTION}</em></h4>
+										</div>	    
+										<div class="clear"></div></div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="clear"></div>
+					</div>
+				</div>	
+				<!-- ENDIF -->
+</header>
+
+<!-- IF SHOW_AFTERBURNER2_PATHWAY -->
+<div id="rt-breadcrumbs">
+	<div class="rt-container">
+		<div class="rt-grid-12 rt-alpha rt-omega">
+			<div class="rt-block">
+				<div class="breadcrumbs">  
+					<span><a href="{U_INDEX}">{L_INDEX}</a><!-- BEGIN navlinks --><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a><!-- END navlinks --></span>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+<!-- ENDIF -->
+
+<div id="rt-mainbody-surround">
+<div class="rt-container">
+	<div id="rt-main" class="<!-- IF AFTERBURNER2_MENUPOSITION eq 'right' -->mb9-sa3<!-- ENDIF --><!-- IF AFTERBURNER2_MENUPOSITION eq 'left' -->sa3-mb9<!-- ENDIF -->">
+		<div class="rt-grid-<!-- IF AFTERBURNER2_MENUPOSITION eq 'full' or AFTERBURNER2_MENUPOSITION eq 'fluid' -->12<!-- ELSE -->9 <!-- ENDIF --> <!-- IF AFTERBURNER2_MENUPOSITION == left -->rt-push-3<!-- ENDIF -->  rt-<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->omega<!-- ELSE -->alpha<!-- ENDIF -->">
+
+			<div class="rt-block component-block">
+				<div id="rt-mainbody">
+					<div class="component-content">
+
+						<!-- IF ENABLE_AFTERBURNER2_FORUM_NAME -->				
+						<h1 class="title"> 
+							<!-- IF FORUM_NAME -->{FORUM_NAME}<!-- ELSE -->{PAGE_TITLE}<!-- ENDIF -->			 </h1> 
+							<!-- ENDIF -->
+
+							<div id="wrap">
+								<a id="top" name="top" accesskey="t"></a>
+								<div id="page-header">
+									<!-- IF AFTERBURNER2_MENUPOSITION eq 'full' or AFTERBURNER2_MENUPOSITION eq 'fluid' -->
+									<div class="navbar">
+										<div class="inner">
+											<!-- IF not S_IS_BOT and S_USER_LOGGED_IN -->
+											<ul class="linklist leftside">
+												<li class="icon-ucp">
+													<!-- IF S_ALLOW_JMENU -->
+													<a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e">{L_PROFILE}</a><!-- ENDIF -->
+													<!-- IF S_DISPLAY_PM --> (<a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a>)<!-- ENDIF -->
+													<!-- IF S_DISPLAY_SEARCH --> &bull;
+													<a href="{U_SEARCH_SELF}">{L_SEARCH_SELF}</a>
+													<!-- ENDIF -->
+													<!-- IF U_RESTORE_PERMISSIONS --> &bull;
+													<a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
+													<!-- ENDIF -->
+												</li>
+											</ul>
+											<!-- ENDIF -->
+
+
+											<ul class="linklist rightside">
+												<!-- IF S_ALLOW_JMENU -->
+												<li class="icon-faq"><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+												<!-- ENDIF -->
+												<!-- IF not S_IS_BOT -->
+												<!-- IF S_DISPLAY_MEMBERLIST --><li class="icon-members"><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
+												<!-- IF S_ALLOW_JMENU -->
+												<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) --><li class="icon-register"><a href="{U_REGISTER}">{L_REGISTER}</a></li><!-- ENDIF -->
+												<li class="icon-logout"><a href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">{L_LOGIN_LOGOUT}</a></li>
+												<!-- ENDIF -->
+												<!-- ENDIF -->
+												<!-- IF U_EMAIL_TOPIC --><li class="icon-email"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
+												<!-- IF U_EMAIL_PM --><li class="icon-email"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
+												<!-- IF U_PRINT_TOPIC --><li class="icon-print"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
+												<!-- IF U_PRINT_PM --><li class="icon-print"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
+											</ul>
+
+										</div>
+									</div>
+
+									<!-- ENDIF -->
+								</div>
+
+								<a name="start_here"></a>
+								<div id="page-body">
+									<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
+									<div id="information" class="rules">
+										<strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}
+									</div>
+									<!-- ENDIF -->
+
